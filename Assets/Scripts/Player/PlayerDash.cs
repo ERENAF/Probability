@@ -6,20 +6,18 @@ using UnityEngine;
 [RequireComponent(typeof(Transform))]
 public class PlayerDash : MonoBehaviour
 {
-    [Header("Основные настройки")]
+    [Header("Main configs")]
     [SerializeField] public float DashForce = 1.0f;
     [SerializeField] public float CoolDown = 1.0f;
     [SerializeField] public float DashDuration = 1.0f;
     private bool isAbleToDash = true;
     public bool isDashing = false;
     private float timer = 0.0f;
-    private Transform transform;
     private Rigidbody rb;
 
-    
+
     private void Start()
     {
-        transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
     }
 
