@@ -1,21 +1,23 @@
 using System.Runtime.CompilerServices;
 using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
 using Unity.IO.LowLevel.Unsafe;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     public float currHP;
     [SerializeField] float maxHP;
     [SerializeField] GameObject hpBar;
-
+    [SerializeField] TextMeshProUGUI hpText;
     void Start()
     {
         SetHP();
     }
     void FixedUpdate()
     {
-
         IsAlive();
     }
 
@@ -43,10 +45,18 @@ public class Health : MonoBehaviour
 
     }
 
-    private void ImageVirtualBar()
+    protected virtual void ImageVirtualBar()
     {
-        Transform hpBarTransform = hpBar.GetComponent<Transform>();
-        hpBarTransform.localScale = new Vector3(Mathf.Max(currHP/maxHP,0),hpBarTransform.localScale.y,hpBarTransform.localScale.z);
+        if (hpBar != null)
+        {
+            Transform hpBarTransform = hpBar.GetComponent<Transform>();
+            hpBarTransform.localScale = new Vector3(Mathf.Max(currHP/maxHP,0),hpBarTransform.localScale.y,hpBarTransform.localScale.z);
+        }
+        if (hpText != null)
+        {
+            hpText.text = $"{(int)currHP}/{(int)maxHP}";
+        }
+
     }
 
 }

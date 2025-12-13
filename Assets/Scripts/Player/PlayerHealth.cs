@@ -7,11 +7,4 @@ public class PlayerHealth : Health
         Debug.Log("Сммерть");
         Application.Quit();
     }
-    protected override void IsAlive()
-    {
-        if (currHP <= 0)
-        {
-            Death();
-        }
-    }
 }
