@@ -24,6 +24,8 @@ public class PlayerJump : MonoBehaviour
 
     void Start()
     {
+        JumpForce += (float)GetComponent<DiceCharacter>().DexterityMod;
+        maxJumpForce += (float)GetComponent<DiceCharacter>().DexterityMod;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }

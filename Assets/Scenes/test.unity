@@ -401,6 +401,27 @@ MonoBehaviour:
   currHP: 0
   maxHP: 10
   hpBar: {fileID: 0}
+  hpText: {fileID: 0}
+--- !u!114 &1140242432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140242423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d3b8c53eeadb049a49fee53abd2f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 10
+  dexterity: 10
+  constituion: 8
+  intelligence: 10
+  wisdom: 10
+  charisma: 10
+  armorClass: 10
+  proficiencyBonus: 2
 --- !u!1 &1253750045
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,6 +436,7 @@ GameObject:
   - component: {fileID: 1253750047}
   - component: {fileID: 1253750046}
   - component: {fileID: 1253750051}
+  - component: {fileID: 1253750052}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -540,6 +562,27 @@ MonoBehaviour:
   currHP: 5
   maxHP: 10
   hpBar: {fileID: 2072998289}
+  hpText: {fileID: 0}
+--- !u!114 &1253750052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253750045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d3b8c53eeadb049a49fee53abd2f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 10
+  dexterity: 10
+  constituion: 10
+  intelligence: 10
+  wisdom: 10
+  charisma: 10
+  armorClass: 10
+  proficiencyBonus: 2
 --- !u!1001 &1376619693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1145,6 +1188,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1577599088929644889, guid: a641b222f73729b418a558ecb88067ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1140242431}
+    - targetCorrespondingSourceObject: {fileID: 1577599088929644889, guid: a641b222f73729b418a558ecb88067ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1140242432}
   m_SourcePrefab: {fileID: 100100000, guid: a641b222f73729b418a558ecb88067ed, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

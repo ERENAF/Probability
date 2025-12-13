@@ -18,6 +18,7 @@ public class PlayerDash : MonoBehaviour
 
     private void Start()
     {
+        DashForce += GetComponent<DiceCharacter>().DexterityMod;
         rb = GetComponent<Rigidbody>();
     }
 

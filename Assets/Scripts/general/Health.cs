@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(DiceCharacter))]
 public class Health : MonoBehaviour
 {
     public float currHP;
@@ -27,6 +28,7 @@ public class Health : MonoBehaviour
     }
     private void SetHP()
     {
+        maxHP+=(float)GetComponent<DiceCharacter>().ConstitutionMod;
         currHP = maxHP;
     }
     protected virtual void IsAlive()

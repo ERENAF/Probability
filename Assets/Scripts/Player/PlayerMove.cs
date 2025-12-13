@@ -16,7 +16,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] float AudioStepVolume = 1f;
     [SerializeField] AudioClip[] AudioSteps;
 
-    private float currSpeed;
+    public float currSpeed;
     private Animator anim;
     private Rigidbody rb;
     private AudioSource audioSource;
@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        currSpeed = speed;
+        currSpeed = speed + GetComponent<DiceCharacter>().DexterityMod;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
