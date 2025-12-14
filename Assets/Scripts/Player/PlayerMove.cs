@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class PlayerMove : MonoBehaviour
 {
-    [Header("Настройки")]
-    [Tooltip("Базовая скорость движения персонажа добавьте MoveSpeed и IsMoving для анимаций")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
+    [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ MoveSpeed пїЅ IsMoving пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [Range(1f, 20f)]
     [SerializeField] float speed = 10f;
     [SerializeField] bool IsAbleToRun = false;
@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        currSpeed = speed + GetComponent<DiceCharacter>().DexterityMod;
+        currSpeed = speed + (float)GetComponent<DiceCharacter>().DexterityMod/10;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -43,7 +43,7 @@ public class PlayerMove : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
 
-        // Получаем направление движения относительно rotation объекта
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ rotation пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Vector3 movement = CalculateMovementDirection(moveX, moveY);
 
         rb.AddForce(movement * currSpeed, forceMode);
@@ -53,17 +53,17 @@ public class PlayerMove : MonoBehaviour
 
     private Vector3 CalculateMovementDirection(float horizontal, float vertical)
     {
-        // Используем forward и right самого объекта (персонажа)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ forward пїЅ right пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
         Vector3 objectForward = transform.forward;
         Vector3 objectRight = transform.right;
 
-        // Убираем вертикальную компоненту для движения только по горизонтали
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         objectForward.y = 0f;
         objectRight.y = 0f;
         objectForward.Normalize();
         objectRight.Normalize();
 
-        // Комбинируем направления относительно rotation объекта
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ rotation пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         return (objectForward * vertical + objectRight * horizontal).normalized;
     }
 
@@ -83,14 +83,14 @@ public class PlayerMove : MonoBehaviour
     {
         if (anim != null)
         {
-            // Рассчитываем величину движения для анимаций
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             float moveMagnitude = new Vector2(horizontal, vertical).magnitude;
             bool IsMoving = moveMagnitude > 0.1f;
 
             anim.SetBool("IsMoving", IsMoving);
             anim.SetFloat("MoveSpeed", moveMagnitude);
 
-            // Опционально: передаем направление для blend tree анимаций
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ blend tree пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             anim.SetFloat("Horizontal", horizontal);
             anim.SetFloat("Vertical", vertical);
         }
@@ -104,7 +104,7 @@ public class PlayerMove : MonoBehaviour
 
             if (stepTimer <= 0f)
             {
-                // Частота шагов зависит от скорости
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 stepCooldown = 0.5f / (rb.linearVelocity.magnitude / speed);
                 audioSource.PlayOneShot(AudioSteps[Random.Range(0, AudioSteps.Length)], AudioStepVolume);
                 stepTimer = stepCooldown;
@@ -112,14 +112,14 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    // Опционально: для отладки направления движения
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void OnDrawGizmos()
     {
-        // Рисуем направление forward объекта
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ forward пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(transform.position, transform.forward * 2f);
 
-        // Рисуем направление right объекта
+        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ right пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         Gizmos.color = Color.red;
         Gizmos.DrawRay(transform.position, transform.right * 2f);
     }

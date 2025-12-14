@@ -1,16 +1,14 @@
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : Item
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Настройки оружия")]
+    public DiceType dice = DiceType.D3;
+    public int count = 1;
+    public float SpeedAtack = 1f;
+    protected float timer = 0f;
+    public GameObject BulletPrefab;
+    public Transform RifleStart;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Shoot(DiceCharacter character);
 }
