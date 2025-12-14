@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-enum Rarity
+public enum Rarity
 {
     Common,
     Uncommon,
@@ -12,20 +12,21 @@ enum Rarity
     Artifact
 }
 
-public abstract class Item: ScriptableObject
+public abstract class Item: MonoBehaviour
 {
-    [Header("Основная инфа")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ")]
     public string itemname;
     public string description;
+    public Rarity rarity = Rarity.Common;
     public GameObject icon;
 
-    [Header("Механика")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     public int charges = 0;
     public int maxCharges = 0;
 
     public abstract void OnEquip(DiceCharacter character);
     public abstract void OnUnequip(DiceCharacter character);
-    public abstract void CanUse(DiceCharacter character);
+    public abstract bool CanUse(DiceCharacter character);
     public abstract void Use(DiceCharacter user, DiceCharacter target = null);
 
     public virtual void OnAttackRoll(DiceCharacter attacker, ref int rollResult) { }

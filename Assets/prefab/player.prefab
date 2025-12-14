@@ -200,6 +200,7 @@ MonoBehaviour:
   forceMode: 0
   AudioStepVolume: 1
   AudioSteps: []
+  currSpeed: 0
 --- !u!114 &3030540602150103877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,11 +269,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8508869163878590888}
-  - {fileID: 8600397223694508332}
+  - {fileID: 7597169310630514677}
   m_Father: {fileID: 778414961423519826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4649544190058054471
@@ -350,6 +350,39 @@ MonoBehaviour:
   PlayerTransform: {fileID: 778414961423519826}
   VerticalLower: 90
   VerticalUpper: -90
+--- !u!1 &5738554627082137381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7597169310630514677}
+  m_Layer: 0
+  m_Name: hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7597169310630514677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5738554627082137381}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8508869163878590888}
+  - {fileID: 8600397223694508332}
+  m_Father: {fileID: 3781225908373015393}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6256631253028533936
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +499,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3781225908373015393}
+    m_TransformParent: {fileID: 7597169310630514677}
     m_Modifications:
     - target: {fileID: 2492962401057804747, guid: 719e2cef1151f7c4bb2831418376e899, type: 3}
       propertyPath: m_Name
@@ -486,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3013779740969716593, guid: 719e2cef1151f7c4bb2831418376e899, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.054
+      value: 0.05399999
       objectReference: {fileID: 0}
     - target: {fileID: 3013779740969716593, guid: 719e2cef1151f7c4bb2831418376e899, type: 3}
       propertyPath: m_LocalPosition.y
@@ -581,11 +614,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 3781225908373015393}
+    m_TransformParent: {fileID: 7597169310630514677}
     m_Modifications:
     - target: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
       propertyPath: m_Name
       value: pistol_001
+      objectReference: {fileID: 0}
+    - target: {fileID: 688644825341151264, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 688644825341151264, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
       propertyPath: m_LocalPosition.x
