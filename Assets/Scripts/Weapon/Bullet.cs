@@ -46,11 +46,7 @@ public class Bullet : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Поддерживаем постоянную скорость
-        if (rb != null && !hasHit)
-        {
-            rb.linearVelocity = direction * speed;
-        }
+        transform.position += direction * Time.deltaTime * speed;
     }
 
     private void OnTriggerEnter(Collider other)

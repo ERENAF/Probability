@@ -1,12 +1,10 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Revolver : Weapon
+public class Rifle : Weapon
 {
-    private void OnEnable()
+private void OnEnable()
     {
-        itemname = "Револьвер";
+        itemname = "Автомат";
 
     }
 
@@ -27,7 +25,7 @@ public class Revolver : Weapon
 
     public override void Use(DiceCharacter user, DiceCharacter target = null)
     {
-        if (Input.GetButtonDown("Fire1") && CanUse(user))
+        if (Input.GetButton("Fire1") && CanUse(user))
         {
             Shoot(user);
             timer = Time.time;
@@ -36,7 +34,6 @@ public class Revolver : Weapon
 
     public override void Shoot(DiceCharacter character)
     {
-        currAmmo-= deltaAmmo;
         GameObject bulletObj = Instantiate(BulletPrefab, RifleStart.position, RifleStart.rotation);
         Vector3 shootDirection = RifleStart.forward;
         int damage = DiceSystem.Roll(dice, count, character.StrengthMod);
@@ -49,4 +46,6 @@ public class Revolver : Weapon
                 character.IntelligenceMod // модификатор атаки
             );
     }
+
+
 }

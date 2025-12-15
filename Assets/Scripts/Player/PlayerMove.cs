@@ -25,7 +25,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
-        currSpeed = speed + (float)GetComponent<DiceCharacter>().DexterityMod/10;
+        currSpeed = speed + (float)GetComponent<DiceCharacter>().DexterityMod;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
