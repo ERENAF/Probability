@@ -59,14 +59,14 @@ public class PlayerShoot : MonoBehaviour
                 break;
             case ChosenWeapon.second:
                 Destroy(chosenWeapon);
-                chosenWeapon = Instantiate(weapon2);
+                chosenWeapon = Instantiate(weapon2,start);
                 chosenWeapon.GetComponent<Weapon>().AttachToTransform(start);
                 chosenWeapon.GetComponent<Weapon>().playerCamera = GetComponent<PlayerCameraController>();
                 break;
         }
     }
 
-        public void SetWeapon(GameObject newWeapon)
+    public void SetWeapon(GameObject newWeapon)
     {
         if (weapon1 == null && weapon2 == null)
         {

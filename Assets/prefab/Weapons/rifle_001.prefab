@@ -158,12 +158,17 @@ MonoBehaviour:
   icon: {fileID: 0}
   charges: 0
   maxCharges: 0
-  dice: 4
-  count: 2
-  SpeedAtack: 20
+  allAmmo: 300
+  maxAmmoInWeapon: 30
+  currAmmo: 0
+  deltaAmmo: 1
+  dice: 3
+  dicecount: 1
+  SpeedAtack: 10
   BulletPrefab: {fileID: 1936768607318955946, guid: 24e956f705cb8ae4394ade54eed1842f, type: 3}
   RifleStart: {fileID: 1330675677513714942}
-  deltaPos: {x: 0, y: 0, z: 0}
+  deltaPos: {x: 0.37, y: -0.53, z: 0.97}
+  playerCamera: {fileID: 0}
 --- !u!1001 &4353313813683632400
 PrefabInstance:
   m_ObjectHideFlags: 0
