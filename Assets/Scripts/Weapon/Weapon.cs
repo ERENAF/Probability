@@ -10,14 +10,14 @@ public abstract class Weapon : Item
     public float currAmmo;
     public float deltaAmmo;
     public DiceType dice = DiceType.D3;
-    public int count = 1;
+    public int dicecount = 1;
     public float SpeedAtack = 1f;
     protected float timer = 0f;
     public GameObject BulletPrefab;
     public Transform RifleStart;
 
     public Vector3 deltaPos;
-
+    public PlayerCameraController playerCamera;
     public abstract void Shoot(DiceCharacter character);
 
     public void DecreaseAmmo()

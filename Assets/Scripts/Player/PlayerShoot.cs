@@ -14,6 +14,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]private GameObject weapon2;
     public GameObject chosenWeapon;
     public ChosenWeapon chosenWeaponIndex = ChosenWeapon.first;
+    [SerializeField]public DiceCharacter diceCharacter;
     public Transform start;
     public TextMeshProUGUI ammoText;
 
@@ -27,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
     {
         if (chosenWeapon != null)
         {
-            chosenWeapon.GetComponent<Weapon>().Use(GetComponent<DiceCharacter>());
+            chosenWeapon.GetComponent<Weapon>().Use(diceCharacter);
             chosenWeapon.GetComponent<Weapon>().Reload();
         }
 
@@ -54,11 +55,13 @@ public class PlayerShoot : MonoBehaviour
                 Destroy(chosenWeapon);
                 chosenWeapon = Instantiate(weapon1,start);
                 chosenWeapon.GetComponent<Weapon>().AttachToTransform(start);
+                chosenWeapon.GetComponent<Weapon>().playerCamera = GetComponent<PlayerCameraController>();
                 break;
             case ChosenWeapon.second:
                 Destroy(chosenWeapon);
                 chosenWeapon = Instantiate(weapon2);
                 chosenWeapon.GetComponent<Weapon>().AttachToTransform(start);
+                chosenWeapon.GetComponent<Weapon>().playerCamera = GetComponent<PlayerCameraController>();
                 break;
         }
     }

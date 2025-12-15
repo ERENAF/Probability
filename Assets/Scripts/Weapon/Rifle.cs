@@ -36,7 +36,7 @@ private void OnEnable()
     {
         GameObject bulletObj = Instantiate(BulletPrefab, RifleStart.position, RifleStart.rotation);
         Vector3 shootDirection = RifleStart.forward;
-        int damage = DiceSystem.Roll(dice, count, character.StrengthMod);
+        int damage = DiceSystem.Roll(dice, dicecount, character.StrengthMod);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.Initialize(
                 -damage,

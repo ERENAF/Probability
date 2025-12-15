@@ -36,17 +36,14 @@ public class Revolver : Weapon
 
     public override void Shoot(DiceCharacter character)
     {
-        currAmmo-= deltaAmmo;
-        GameObject bulletObj = Instantiate(BulletPrefab, RifleStart.position, RifleStart.rotation);
-        Vector3 shootDirection = RifleStart.forward;
-        int damage = DiceSystem.Roll(dice, count, character.StrengthMod);
-        Bullet bullet = bulletObj.GetComponent<Bullet>();
-        bullet.Initialize(
-                -damage,
-                50 + character.IntelligenceMod, // скорость
-                shootDirection,
-                RollType.RollSimple,
-                character.IntelligenceMod // модификатор атаки
-            );
+        currAmmo = Mathf.Max(currAmmo - deltaAmmo,0);
+
+        Vector3 shootDirection = playerCamera.GetShootDirectionFromPoint(RifleStart.position);
+
+        GameObject bulletObj = Instantiate(BulletPrefab,RifleStart.position, Quaternion.LookRotation(shootDirection));
+
+        int damage = DiceSystem.Roll(dice,dicecount, character.StrengthMod );
+
+        bulletObj.GetComponent<Bullet>().Initialize(-damage,50+character.IntelligenceMod,shootDirection,RollType.RollSimple,character.IntelligenceMod);
     }
 }
