@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         // �������� ����������� �������� ������������ rotation �������
         Vector3 movement = CalculateMovementDirection(moveX, moveY);
 
-        rb.AddForce(movement * currSpeed, forceMode);
+        transform.position += movement * Time.deltaTime * speed;
         AnimMove(moveX, moveY);
         AudioMove();
     }
