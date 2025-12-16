@@ -103,6 +103,8 @@ GameObject:
   - component: {fileID: 2674647751987940403}
   - component: {fileID: 4228454834391929258}
   - component: {fileID: 1863267675380064855}
+  - component: {fileID: 7757913556370950387}
+  - component: {fileID: 7057381518585003723}
   m_Layer: 0
   m_Name: rifle_001
   m_TagString: Untagged
@@ -196,7 +198,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -231,3 +233,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7757913556370950387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476223461033143782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e13251d0b92f9648b767508282d1ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropWeapon
+  Item: {fileID: 3777830575384689203, guid: 1a13dc90cd7fff44aa84706fa1bae435, type: 3}
+  tag_: Player
+  describtion: "\u041D\u0410\u0416\u041C\u0418\u0422\u0415 F \u0427\u0422\u041E\u0411\u042B
+    \u041F\u041E\u0414\u041E\u0411\u0420\u0410\u0422\u042C"
+  revealText: {fileID: 4569997647340952739, guid: 1a33817f21496f541abfaf031d7b3d89, type: 3}
+--- !u!65 &7057381518585003723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476223461033143782}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.551776, y: 3.5276442, z: 3.3551655}
+  m_Center: {x: 0.5982194, y: -0.20639324, z: 0.5240824}
