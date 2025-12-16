@@ -21,7 +21,6 @@ public class PlayerShoot : MonoBehaviour
     void Start()
     {
         ChangeWeapon();
-        chosenWeapon.GetComponent<Weapon>().Reload();
     }
 
     void Update()

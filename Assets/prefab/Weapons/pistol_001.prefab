@@ -142,10 +142,11 @@ MonoBehaviour:
   icon: {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
   charges: 0
   maxCharges: 0
-  allAmmo: 36
+  allAmmo: 6
   maxAmmoInWeapon: 6
   currAmmo: 0
   deltaAmmo: 1
+  reloadTime: 0
   dice: 6
   dicecount: 1
   SpeedAtack: 1.5

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,6 +10,8 @@ public abstract class Weapon : Item
     public float maxAmmoInWeapon;
     public float currAmmo;
     public float deltaAmmo;
+    public float reloadTime = 1f;
+    protected bool isReloading = false;
     public DiceType dice = DiceType.D3;
     public int dicecount = 1;
     public float SpeedAtack = 1f;
@@ -20,11 +23,11 @@ public abstract class Weapon : Item
     public PlayerCameraController playerCamera;
     public abstract void Shoot(DiceCharacter character);
 
-    public void DecreaseAmmo()
+    void Start()
     {
-        currAmmo-=deltaAmmo;
+        currAmmo = maxAmmoInWeapon;
     }
-    public void Reload()
+    public void Reload(float timer )
     {
         if (currAmmo == maxAmmoInWeapon || allAmmo == 0)
         {
@@ -32,16 +35,47 @@ public abstract class Weapon : Item
         }
         else if (currAmmo != maxAmmoInWeapon && Input.GetKeyDown(KeyCode.R))
         {
-            allAmmo -= maxAmmoInWeapon-currAmmo;
-            currAmmo = Mathf.Min(maxAmmoInWeapon,allAmmo);
+            isReloading = true;
+            StartCoroutine(ReloadFunc(timer));
         }
         else if (currAmmo == 0)
         {
-            allAmmo -= maxAmmoInWeapon;
-            currAmmo = Mathf.Min(maxAmmoInWeapon,allAmmo);
+            isReloading = true;
+            StartCoroutine(ReloadFunc(timer));
         }
     }
-
+    public void Reload()
+    {
+        if (currAmmo == maxAmmoInWeapon || allAmmo == 0)
+        {
+            return;
+        }
+        else if ((currAmmo < maxAmmoInWeapon && Input.GetKeyDown(KeyCode.R)) || currAmmo == 0)
+        {
+            isReloading = true;
+            StartCoroutine(ReloadFunc(reloadTime));
+        }
+    }
+    private IEnumerator ReloadFunc(float timer = 0f)
+    {
+        yield return new WaitForSeconds(timer);
+        if(allAmmo > maxAmmoInWeapon-currAmmo)
+        {
+            allAmmo -= maxAmmoInWeapon-currAmmo;
+            currAmmo = maxAmmoInWeapon;
+        }
+        else if (allAmmo == maxAmmoInWeapon - currAmmo)
+        {
+            allAmmo = 0;
+            currAmmo = maxAmmoInWeapon - currAmmo;
+        }
+        else if (allAmmo < maxAmmoInWeapon - currAmmo)
+        {
+            currAmmo += allAmmo;
+            allAmmo = 0;
+        }
+        isReloading = false;
+    }
     public virtual string ToStringAmmo()
     {
         return $"{currAmmo}|{allAmmo}";
@@ -53,5 +87,9 @@ public abstract class Weapon : Item
         transform.localPosition = deltaPos;
         transform.localRotation = Quaternion.identity;
         transform.localScale = Vector3.one;
+    }
+    public void ChangeCurrAmmo()
+    {
+        currAmmo = Mathf.Max(currAmmo - deltaAmmo,0);
     }
 }

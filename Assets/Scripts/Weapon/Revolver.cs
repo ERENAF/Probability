@@ -22,7 +22,7 @@ public class Revolver : Weapon
 
     public override bool CanUse(DiceCharacter character)
     {
-        return Time.time - timer >= 1 / SpeedAtack;
+        return Time.time - timer >= 1 / SpeedAtack && !isReloading && currAmmo != 0;
     }
 
     public override void Use(DiceCharacter user, DiceCharacter target = null)
@@ -36,7 +36,7 @@ public class Revolver : Weapon
 
     public override void Shoot(DiceCharacter character)
     {
-        currAmmo = Mathf.Max(currAmmo - deltaAmmo,0);
+        ChangeCurrAmmo();
 
         Vector3 shootDirection = playerCamera.GetShootDirectionFromPoint(RifleStart.position);
 
