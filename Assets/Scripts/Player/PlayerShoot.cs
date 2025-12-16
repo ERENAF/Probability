@@ -44,24 +44,57 @@ public class PlayerShoot : MonoBehaviour
             }
             ChangeWeapon();
         }
-        if (ammoText != null) ammoText.text = chosenWeapon.GetComponent<Weapon>().ToStringAmmo();
+        if (Input.GetKeyDown(KeyCode.Q) && chosenWeapon != null)
+        {
+            chosenWeapon.GetComponent<Weapon>().DropItem(start,10);
+            chosenWeapon = null;
+            if (chosenWeaponIndex == ChosenWeapon.first)
+            {
+                chosenWeaponIndex = ChosenWeapon.second;
+                weapon1 = null;
+            }
+            else
+            {
+                chosenWeaponIndex = ChosenWeapon.first;
+                weapon2 = null;
+            }
+            ChangeWeapon();
+        }
+
+        if (chosenWeapon != null)
+        {
+            if (ammoText != null) ammoText.text = chosenWeapon.GetComponent<Weapon>().ToStringAmmo();
+        }
     }
 
     private void ChangeWeapon()
     {
+        if (weapon1 != null || weapon2 != null)
         switch (chosenWeaponIndex)
         {
             case ChosenWeapon.first:
-                Destroy(chosenWeapon);
-                chosenWeapon = Instantiate(weapon1,start);
-                chosenWeapon.GetComponent<Weapon>().AttachToTransform(start);
-                chosenWeapon.GetComponent<Weapon>().playerCamera = GetComponent<PlayerCameraController>();
+                if (weapon1 != null)
+                {
+                    if (chosenWeapon != null)
+                    {
+                        Destroy(chosenWeapon);
+                    }
+                    chosenWeapon = Instantiate(weapon1,start);
+                    chosenWeapon.GetComponent<Weapon>().AttachToTransform(start);
+                    chosenWeapon.GetComponent<Weapon>().playerCamera = GetComponent<PlayerCameraController>();
+                }
                 break;
             case ChosenWeapon.second:
-                Destroy(chosenWeapon);
-                chosenWeapon = Instantiate(weapon2,start);
-                chosenWeapon.GetComponent<Weapon>().AttachToTransform(start);
-                chosenWeapon.GetComponent<Weapon>().playerCamera = GetComponent<PlayerCameraController>();
+                if (weapon2 != null)
+                {
+                    if (chosenWeapon != null)
+                    {
+                        Destroy(chosenWeapon);
+                    }
+                    chosenWeapon = Instantiate(weapon2,start);
+                    chosenWeapon.GetComponent<Weapon>().AttachToTransform(start);
+                    chosenWeapon.GetComponent<Weapon>().playerCamera = GetComponent<PlayerCameraController>();
+                }
                 break;
         }
     }

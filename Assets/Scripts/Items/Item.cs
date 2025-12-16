@@ -1,6 +1,7 @@
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using System.Threading;
+using System.Collections;
 
 public enum Rarity
 {
@@ -39,5 +40,18 @@ public abstract class Item: MonoBehaviour
         int actualDamage = Mathf.Max(0, damage);
         target.GetComponent<Health>().currHP-=actualDamage;
         return $"{actualDamage}";
+    }
+
+    protected virtual void DropItem(Transform transform)
+    {
+        Instantiate(icon, transform);
+        Destroy(gameObject);
+    }
+    public virtual void DropItem(Transform transform, int Force)
+    {
+        GameObject obj = Instantiate(icon,transform.position,transform.rotation);
+        float direction = (float)Random.Range(0,100)/100;
+        obj.GetComponent<Rigidbody>().AddForce(new Vector3(direction,transform.position.y,1-direction).normalized,ForceMode.Impulse);
+        Destroy(gameObject);
     }
 }
