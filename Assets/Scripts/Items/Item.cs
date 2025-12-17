@@ -13,12 +13,20 @@ public enum Rarity
     Artifact
 }
 
+public enum UseType
+{
+    active,
+    passive,
+    weapon
+}
+
 public abstract class Item: MonoBehaviour
 {
     [Header("�������� ����")]
     public string itemname;
     public string description;
     public Rarity rarity = Rarity.Common;
+    public UseType useType = UseType.passive;
     public GameObject icon;
 
     [Header("��������")]
@@ -50,8 +58,10 @@ public abstract class Item: MonoBehaviour
     public virtual void DropItem(Transform transform, int Force)
     {
         GameObject obj = Instantiate(icon,transform.position,transform.rotation);
-        float direction = (float)Random.Range(0,100)/100;
-        obj.GetComponent<Rigidbody>().AddForce(new Vector3(direction,transform.position.y,1-direction).normalized,ForceMode.Impulse);
+        float x = (float)Random.Range(0,100)/100;
+        float z = (float)Random.Range(0,100)/100;
+
+        obj.GetComponent<Rigidbody>().AddForce(new Vector3(x,transform.position.y,z).normalized,ForceMode.Impulse);
         Destroy(gameObject);
     }
 }
