@@ -281,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 3987911817723122184}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.000000014901159, z: -0, w: 1}
-  m_LocalPosition: {x: 0.005, y: 0.498, z: 2.505}
+  m_LocalPosition: {x: -0.0007, y: 0.5121, z: 2.499}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 550251268411784897}
   - component: {fileID: 5519100794700464877}
   - component: {fileID: 531200575484701007}
+  - component: {fileID: 5907659049394530385}
   m_Layer: 0
   m_Name: Room_2
   m_TagString: Untagged
@@ -383,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 8518469322666510669}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12015.118, y: -730.542, z: -30761.277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10612,6 +10613,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomEnemySpawner
   isLootSpawning: 0
+--- !u!114 &5907659049394530385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8518469322666510669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fda5240caa164e43a7e783a96d86fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollliderChecker
 --- !u!1 &9169608713047930480
 GameObject:
   m_ObjectHideFlags: 0

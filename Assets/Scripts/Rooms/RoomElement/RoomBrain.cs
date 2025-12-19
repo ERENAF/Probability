@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(RoomData), typeof(RoomLootSpawner), typeof(RoomEnemySpawner))]
+[RequireComponent(typeof(CollliderChecker))]
 public class RoomBrain : MonoBehaviour
 {
     RoomData roomData;
