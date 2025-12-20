@@ -73,6 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1073248141562542605}
+  - component: {fileID: 4949879786933743115}
   m_Layer: 0
   m_Name: RoomDoorPoint_3
   m_TagString: RoomDoorPoint
@@ -95,6 +96,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4551093421578393638}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &4949879786933743115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544700651084532679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9254f0760cda86a46b0a27c195061c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorPoint
+  IsUsed: 0
 --- !u!1 &1913080498007454503
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4439174737918236789}
+  - component: {fileID: 3740609559913896797}
   m_Layer: 0
   m_Name: RoomDoorPoint_2
   m_TagString: RoomDoorPoint
@@ -126,6 +141,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4551093421578393638}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &3740609559913896797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913080498007454503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9254f0760cda86a46b0a27c195061c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorPoint
+  IsUsed: 0
 --- !u!1 &2368970589439884245
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470195273245186491}
+  - component: {fileID: 3784944475872421068}
   m_Layer: 0
   m_Name: RoomDoorPoint_4
   m_TagString: RoomDoorPoint
@@ -256,6 +285,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4551093421578393638}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &3784944475872421068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724732958597497748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9254f0760cda86a46b0a27c195061c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorPoint
+  IsUsed: 0
 --- !u!1 &3987911817723122184
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7273497547169735266}
+  - component: {fileID: 8388463831760231856}
   m_Layer: 0
   m_Name: RoomDoorPoint_1
   m_TagString: RoomDoorPoint
@@ -287,6 +330,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4551093421578393638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8388463831760231856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987911817723122184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9254f0760cda86a46b0a27c195061c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorPoint
+  IsUsed: 0
 --- !u!1 &7476428959739812966
 GameObject:
   m_ObjectHideFlags: 0
@@ -10575,12 +10631,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a80fe6a1edf7f142b9ceaa9910def0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomData
+  roomType: 3
   roomObject: {fileID: 8518469322666510669}
-  roomDoorsPoints:
-  - {fileID: 7273497547169735266}
-  - {fileID: 4439174737918236789}
-  - {fileID: 1073248141562542605}
-  - {fileID: 470195273245186491}
+  Doors:
+  - {fileID: 8388463831760231856}
+  - {fileID: 3740609559913896797}
+  - {fileID: 4949879786933743115}
+  - {fileID: 3784944475872421068}
   lootSpawnPoints:
   - {fileID: 3082988951648911735}
   - {fileID: 7896183402952868006}

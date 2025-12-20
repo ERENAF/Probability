@@ -5135,10 +5135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a80fe6a1edf7f142b9ceaa9910def0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomData
+  roomType: 2
   roomObject: {fileID: 3569355573093306040}
-  roomDoorsPoints:
-  - {fileID: 9152547429442160982}
-  - {fileID: 1085466244168408852}
+  Doors: []
   lootSpawnPoints:
   - {fileID: 2765209847962370990}
   - {fileID: 2699013521557565621}
