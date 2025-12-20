@@ -24,7 +24,7 @@ public abstract class Weapon : Item
 
     public Vector3 deltaPos;
     public PlayerCameraController playerCamera;
-    public abstract void Shoot(DiceCharacter character);
+    public abstract void Shoot(DiceCharacter character, int extraDamage = 0);
 
     public void Reload(float timer )
     {
@@ -92,8 +92,8 @@ public abstract class Weapon : Item
         currAmmo = Mathf.Max(currAmmo - deltaAmmo,0);
     }
 
-    public int Damage( int dmgmodifier = 0, int dmgmultipliyer = 1)
+    public int Damage(int dmgmodifier = 0, int dmgmultipliyer = 1, int extraDamage = 0)
     {
-        return DiceSystem.Roll(dice,dicecount, dmgmodifier )*dmgmultipliyer;
+        return DiceSystem.Roll(dice,dicecount, dmgmodifier )*dmgmultipliyer + extraDamage;
     }
 }

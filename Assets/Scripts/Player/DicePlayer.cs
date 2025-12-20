@@ -7,7 +7,6 @@ public class DicePlayer : DiceCharacter
 {
     [SerializeField] List<GameObject> items;
     [SerializeField] GameObject activeItem;
-
     public void AddItem(GameObject Item)
     {
         switch (Item.GetComponent<Item>().useType)

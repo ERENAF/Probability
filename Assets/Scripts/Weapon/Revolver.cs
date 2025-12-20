@@ -29,12 +29,12 @@ public class Revolver : Weapon
     {
         if (Input.GetButtonDown("Fire1") && CanUse(user))
         {
-            Shoot(user);
+            Shoot(user, user.bonusDMG);
             timer = Time.time;
         }
     }
 
-    public override void Shoot(DiceCharacter character)
+    public override void Shoot(DiceCharacter character, int extraDamage = 0)
     {
         ChangeCurrAmmo();
 
@@ -45,7 +45,7 @@ public class Revolver : Weapon
 
         bulletObj.GetComponent<Bullet>().Initialize(
         -Damage(dmgmodifier = character.StrengthMod + dmgmodifier,
-        dmgmultipliyer),
+        dmgmultipliyer,extraDamage),
         50+character.IntelligenceMod,
         shootDirection,
         RollType.RollSimple,

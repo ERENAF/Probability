@@ -25,6 +25,7 @@ public class DiceCharacter : MonoBehaviour
     [Header("������ ���������")]
     public int armorClass = 10;
     public int proficiencyBonus = 0;
+    public int bonusDMG;
 
     public bool reRoll = false;
 

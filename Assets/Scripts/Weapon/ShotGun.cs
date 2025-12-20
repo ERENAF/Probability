@@ -39,7 +39,7 @@ public class ShotGun : Weapon
         }
     }
 
-    public override void Shoot(DiceCharacter character)
+    public override void Shoot(DiceCharacter character, int extraDamage = 0)
     {
         ChangeCurrAmmo();
 
