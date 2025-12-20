@@ -10,19 +10,29 @@ public class DicePlayer : DiceCharacter
 
     public void AddItem(GameObject Item)
     {
-        return;
+        switch (Item.GetComponent<Item>().useType)
+        {
+            case UseType.active :
+                AddActiveItem(Item);
+                break;
+            case UseType.passive:
+                AddPassiveItem(Item);
+                break;
+            default:
+                break;
+        }
     }
-    public void AddPassiveItem(GameObject item)
+    private void AddPassiveItem(GameObject item)
     {
         items.Add(item);
-        GetComponent<Item>().OnEquip(this);
+        item.GetComponent<Item>().OnEquip(this);
     }
 
-    public void AddActiveItem(GameObject item)
+    private void AddActiveItem(GameObject item)
     {
         if (activeItem != null)
         {
-
+            return;
         }
     }
 

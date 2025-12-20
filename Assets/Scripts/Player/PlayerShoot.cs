@@ -14,7 +14,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]private GameObject weapon2;
     public GameObject chosenWeapon;
     public ChosenWeapon chosenWeaponIndex = ChosenWeapon.first;
-    [SerializeField]public DiceCharacter diceCharacter;
+    [SerializeField]public DicePlayer diceCharacter;
     public Transform start;
     public TextMeshProUGUI ammoText;
 

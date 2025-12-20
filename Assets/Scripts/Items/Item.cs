@@ -27,7 +27,7 @@ public abstract class Item: MonoBehaviour
     public string description;
     public Rarity rarity = Rarity.Common;
     public UseType useType = UseType.passive;
-    public GameObject icon;
+    public GameObject dropItem;
 
     [Header("��������")]
     public int charges = 0;
@@ -52,12 +52,12 @@ public abstract class Item: MonoBehaviour
 
     protected virtual void DropItem(Transform transform)
     {
-        Instantiate(icon, transform);
+        Instantiate(dropItem, transform);
         Destroy(gameObject);
     }
     public virtual void DropItem(Transform transform, int Force)
     {
-        GameObject obj = Instantiate(icon,transform.position,transform.rotation);
+        GameObject obj = Instantiate(dropItem,transform.position,transform.rotation);
         float x = (float)Random.Range(0,100)/100;
         float z = (float)Random.Range(0,100)/100;
 

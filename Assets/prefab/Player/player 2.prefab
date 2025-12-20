@@ -350,7 +350,7 @@ MonoBehaviour:
   weapon2: {fileID: 6366749035229262499, guid: c111e006a8772a549b1973c314fdf121, type: 3}
   chosenWeapon: {fileID: 0}
   chosenWeaponIndex: 0
-  diceCharacter: {fileID: 8865376738213061069}
+  diceCharacter: {fileID: 0}
   start: {fileID: 1129564016945716318}
   ammoText: {fileID: 0}
 --- !u!1 &2588042597610345870
@@ -1245,7 +1245,7 @@ GameObject:
   - component: {fileID: 5779355781269708497}
   - component: {fileID: 7539390360643234490}
   - component: {fileID: 2218073108820471907}
-  - component: {fileID: 8865376738213061069}
+  - component: {fileID: 5190227006483657938}
   m_Layer: 0
   m_Name: player 2
   m_TagString: Player
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   maxHP: 10
   hpBar: {fileID: 0}
   hpText: {fileID: 0}
---- !u!114 &8865376738213061069
+--- !u!114 &5190227006483657938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1498,17 +1498,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7452386276845527380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d3b8c53eeadb049a49fee53abd2f0b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8524a1a8bda6a9c458a6fcb7c55fdb03, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::DicePlayer
   strength: 10
-  dexterity: 20
+  dexterity: 10
   constituion: 10
   intelligence: 10
   wisdom: 10
   charisma: 10
   armorClass: 10
   proficiencyBonus: 2
+  items: []
+  activeItem: {fileID: 0}
 --- !u!1 &7656134255069638121
 GameObject:
   m_ObjectHideFlags: 0
