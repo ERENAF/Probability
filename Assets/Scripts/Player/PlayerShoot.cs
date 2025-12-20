@@ -76,6 +76,11 @@ public class PlayerShoot : MonoBehaviour
                 {
                     if (chosenWeapon != null)
                     {
+                        if (weapon2 != null)
+                        {
+                            weapon2.GetComponent<Weapon>().allAmmo = chosenWeapon.GetComponent<Weapon>().allAmmo;
+                            weapon2.GetComponent<Weapon>().currAmmo = chosenWeapon.GetComponent<Weapon>().currAmmo;
+                        }
                         Destroy(chosenWeapon);
                     }
                     chosenWeapon = Instantiate(weapon1,start);
@@ -88,6 +93,12 @@ public class PlayerShoot : MonoBehaviour
                 {
                     if (chosenWeapon != null)
                     {
+
+                        if (weapon1 != null)
+                        {
+                            weapon1.GetComponent<Weapon>().allAmmo = chosenWeapon.GetComponent<Weapon>().allAmmo;
+                            weapon1.GetComponent<Weapon>().currAmmo = chosenWeapon.GetComponent<Weapon>().currAmmo;
+                        }
                         Destroy(chosenWeapon);
                     }
                     chosenWeapon = Instantiate(weapon2,start);

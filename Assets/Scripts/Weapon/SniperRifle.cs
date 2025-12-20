@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Rifle : Weapon
+public class SniperRifle : Weapon
 {
     private void OnEnable()
     {
-        itemname = "Автомат";
+        itemname = "Револьвер";
 
     }
 
@@ -25,7 +25,7 @@ public class Rifle : Weapon
 
     public override void Use(DiceCharacter user, DiceCharacter target = null)
     {
-        if (Input.GetButton("Fire1") && CanUse(user))
+        if (Input.GetButtonDown("Fire1") && CanUse(user))
         {
             Shoot(user);
             timer = Time.time;
@@ -40,14 +40,11 @@ public class Rifle : Weapon
 
         GameObject bulletObj = Instantiate(BulletPrefab,RifleStart.position, Quaternion.LookRotation(shootDirection));
 
-        bulletObj.GetComponent<Bullet>().Initialize(
-        -Damage(dmgmodifier = character.StrengthMod + dmgmodifier,
+        bulletObj.GetComponent<Bullet>().Initialize(-Damage(dmgmodifier = character.StrengthMod + dmgmodifier,
         dmgmultipliyer),
         50+character.IntelligenceMod,
         shootDirection,
         RollType.RollSimple,
         character.IntelligenceMod + checkmodifier);
     }
-
-
 }

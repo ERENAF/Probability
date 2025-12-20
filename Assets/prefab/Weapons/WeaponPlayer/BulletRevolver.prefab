@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4963739474750510085}
   - component: {fileID: 693797717477778591}
   - component: {fileID: 6963508594231297926}
+  - component: {fileID: 3501513491346818370}
   m_Layer: 0
   m_Name: BulletRevolver
   m_TagString: Bullet
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.73623, y: 0.01505, z: -9.16115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -111,7 +112,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 4, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6963508594231297926
 MonoBehaviour:
@@ -126,4 +127,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyTag: Enemy
-  lifeTime: 10
+  lifeTime: 3
+  damageTextPrefab: {fileID: 2914050092114105931, guid: 204cb8835aa5a604581848b58cb196bf, type: 3}
+  spawnRadius: 0.5
+  spawnOffset: {x: 0, y: 1, z: 0}
+  textLifetime: 1.5
+--- !u!54 &3501513491346818370
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936768607318955946}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

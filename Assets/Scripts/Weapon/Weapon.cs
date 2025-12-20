@@ -14,6 +14,9 @@ public abstract class Weapon : Item
     protected bool isReloading = false;
     public DiceType dice = DiceType.D3;
     public int dicecount = 1;
+    public int checkmodifier = 0;
+    public int dmgmodifier = 0;
+    public int dmgmultipliyer = 1;
     public float SpeedAtack = 1f;
     protected float timer = 0f;
     public GameObject BulletPrefab;
@@ -23,10 +26,6 @@ public abstract class Weapon : Item
     public PlayerCameraController playerCamera;
     public abstract void Shoot(DiceCharacter character);
 
-    void Start()
-    {
-        currAmmo = maxAmmoInWeapon;
-    }
     public void Reload(float timer )
     {
         if (currAmmo == maxAmmoInWeapon || allAmmo == 0)
@@ -91,5 +90,10 @@ public abstract class Weapon : Item
     public void ChangeCurrAmmo()
     {
         currAmmo = Mathf.Max(currAmmo - deltaAmmo,0);
+    }
+
+    public int Damage( int dmgmodifier = 0, int dmgmultipliyer = 1)
+    {
+        return DiceSystem.Roll(dice,dicecount, dmgmodifier )*dmgmultipliyer;
     }
 }

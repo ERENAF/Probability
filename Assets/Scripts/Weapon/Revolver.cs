@@ -42,8 +42,13 @@ public class Revolver : Weapon
 
         GameObject bulletObj = Instantiate(BulletPrefab,RifleStart.position, Quaternion.LookRotation(shootDirection));
 
-        int damage = DiceSystem.Roll(dice,dicecount, character.StrengthMod );
 
-        bulletObj.GetComponent<Bullet>().Initialize(-damage,50+character.IntelligenceMod,shootDirection,RollType.RollSimple,character.IntelligenceMod);
+        bulletObj.GetComponent<Bullet>().Initialize(
+        -Damage(dmgmodifier = character.StrengthMod + dmgmodifier,
+        dmgmultipliyer),
+        50+character.IntelligenceMod,
+        shootDirection,
+        RollType.RollSimple,
+        character.IntelligenceMod + checkmodifier);
     }
 }
