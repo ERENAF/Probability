@@ -1,25 +1,24 @@
-using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class NanoExoSkelet: Item
+public class NeiroInterface : Item
 {
-    [Header("настройки предмета")]
-    public int strengthBonus = 1;
-
+    [Header("Настройки предмета")]
+    public int intelligenceBonus = 1;
     private void OnEnable()
     {
-        itemname = "Нано экзоскелет";
-        description = "Усилите свои силовые возможности!";
-        rarity = Rarity.Uncommon;
+        itemname = "Нейроинтерфейс";
+        description = "Помогает в стрельбе!";
+        rarity = Rarity.Common;
     }
 
     public override void OnEquip(DiceCharacter character)
     {
-        character.strength += strengthBonus;
+        character.wisdom += intelligenceBonus;
     }
     public override void OnUnequip(DiceCharacter character)
     {
-        character.strength -= strengthBonus;
+        character.wisdom -= intelligenceBonus;
     }
     public override bool CanUse(DiceCharacter character)
     {
@@ -30,5 +29,6 @@ public class NanoExoSkelet: Item
     {
         return;
     }
+
 
 }

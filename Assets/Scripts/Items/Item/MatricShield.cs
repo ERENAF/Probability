@@ -1,25 +1,24 @@
-using System;
 using UnityEngine;
 
-public class NanoExoSkelet: Item
+public class MatricShield : Item
 {
     [Header("настройки предмета")]
-    public int strengthBonus = 1;
+    public int armorBonus = 1;
 
     private void OnEnable()
     {
-        itemname = "Нано экзоскелет";
-        description = "Усилите свои силовые возможности!";
+        itemname = "Матричная броня";
+        description = "Блестящая броня защитит вас от всего. +1 к КД";
         rarity = Rarity.Uncommon;
     }
 
     public override void OnEquip(DiceCharacter character)
     {
-        character.strength += strengthBonus;
+        character.armorClass += armorBonus;
     }
     public override void OnUnequip(DiceCharacter character)
     {
-        character.strength -= strengthBonus;
+        character.armorClass -= armorBonus;
     }
     public override bool CanUse(DiceCharacter character)
     {
@@ -30,5 +29,4 @@ public class NanoExoSkelet: Item
     {
         return;
     }
-
 }

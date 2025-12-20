@@ -1,25 +1,21 @@
-using System;
 using UnityEngine;
 
-public class NanoExoSkelet: Item
+public class Stabilizer : Item
 {
-    [Header("настройки предмета")]
-    public int strengthBonus = 1;
-
     private void OnEnable()
     {
-        itemname = "Нано экзоскелет";
-        description = "Усилите свои силовые возможности!";
-        rarity = Rarity.Uncommon;
+        itemname = "Квантовый стабилизатор";
+        description = "Вы подчинаете вероятность лучше, при выпадении 1, переброситься результат";
+        rarity = Rarity.Rare;
     }
 
     public override void OnEquip(DiceCharacter character)
     {
-        character.strength += strengthBonus;
+        character.reRoll = true;
     }
     public override void OnUnequip(DiceCharacter character)
     {
-        character.strength -= strengthBonus;
+        character.reRoll = false;
     }
     public override bool CanUse(DiceCharacter character)
     {
@@ -30,5 +26,6 @@ public class NanoExoSkelet: Item
     {
         return;
     }
+
 
 }

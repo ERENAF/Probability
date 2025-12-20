@@ -30,19 +30,19 @@ public enum ResultType
 }
 public static class DiceSystem
 {
-    public static ResultType CheckD20(RollType type, int difficulty,int modifier)
+    public static ResultType CheckD20(RollType type, int difficulty,int modifier, bool isReroll = false)
     {
         int rollresult;
         switch (type)
         {
             case (RollType.RollSimple):
-                rollresult = Roll(DiceType.D20,1,modifier);
+                rollresult = Roll(DiceType.D20,1,modifier, isReroll);
                 break;
             case (RollType.RollWithAdvantage):
-                rollresult = RollWithAdvantage(modifier);
+                rollresult = RollWithAdvantage(modifier,isReroll);
                 break;
             case (RollType.RollWithDisadvantage):
-                rollresult = RollWithDisadvantage(modifier);
+                rollresult = RollWithDisadvantage(modifier,isReroll);
                 break;
             default:
                 rollresult = 1;
@@ -66,9 +66,9 @@ public static class DiceSystem
         }
 
     }
-    public static ResultType CheckD100(int difficulty, int modifier)
+    public static ResultType CheckD100(int difficulty, int modifier, bool isReroll)
     {
-        int result = Roll(DiceType.D100,1,modifier);
+        int result = Roll(DiceType.D100,1,modifier, isReroll);
         if (result == 20 + modifier)
         {
             return ResultType.CriticalSuccess;
@@ -89,26 +89,32 @@ public static class DiceSystem
 
 
 
-    public static int Roll(DiceType dice, int count = 1, int modifier = 0)
+    public static int Roll(DiceType dice, int count = 1, int modifier = 0, bool isReroll = false)
     {
         int total = 0;
+
         for (int i = 0; i < count; i++)
         {
-            total += Random.Range(1, (int)dice + 1);
+            int result = Random.Range(1, (int)dice + 1);
+            if (result == 1 && isReroll && (dice == DiceType.D20 || dice == DiceType.D100))
+            {
+                result = Random.Range(1, (int)dice + 1);
+            }
+            total += result;
         }
         return total + modifier;
     }
-    public static int RollWithAdvantage(int modifier = 0)
+    public static int RollWithAdvantage(int modifier = 0, bool isReroll = false)
     {
-        int roll1 = Roll(DiceType.D20,1,modifier);
-        int roll2 = Roll(DiceType.D20,1,modifier);
+        int roll1 = Roll(DiceType.D20,1,modifier, isReroll);
+        int roll2 = Roll(DiceType.D20,1,modifier, isReroll);
         return Mathf.Max(roll1, roll2);
     }
 
-    public static int RollWithDisadvantage(int modifier = 0)
+    public static int RollWithDisadvantage(int modifier = 0, bool isReroll = false)
     {
-        int roll1 = Roll(DiceType.D20,1,modifier);
-        int roll2 = Roll(DiceType.D20,1,modifier);
+        int roll1 = Roll(DiceType.D20,1,modifier, isReroll);
+        int roll2 = Roll(DiceType.D20,1,modifier, isReroll);
         return Mathf.Min(roll1,roll2);
     }
 

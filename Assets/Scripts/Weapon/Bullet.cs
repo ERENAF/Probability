@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     [NonSerialized] public Vector3 direction;
     [NonSerialized] public RollType rolltype;
     [NonSerialized] public int modifier;
+    [NonSerialized] public bool isReroll;
     [SerializeField] private GameObject damageTextPrefab;
 
     [Header("Настройки спауна текста урона")]
@@ -22,20 +23,20 @@ public class Bullet : MonoBehaviour
     private Rigidbody rb;
     private bool hasHit = false;
 
-    public void Initialize(int DMG, float speed, Vector3 direction, RollType rt, int modifier)
+    public void Initialize(int DMG, float speed, Vector3 direction, RollType rt, int modifier, bool isReroll)
     {
         this.DMG = DMG;
         this.speed = speed;
         this.direction = direction.normalized;
         this.rolltype = rt;
         this.modifier = modifier;
+        this.isReroll = isReroll;
     }
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        // Настройки Rigidbody для пули
         if (rb != null)
         {
             rb.useGravity = false;
@@ -66,7 +67,8 @@ public class Bullet : MonoBehaviour
                 ResultType result = DiceSystem.CheckD20(
                     rolltype,
                     enemyChar.armorClass,
-                    modifier
+                    modifier,
+                    isReroll
                 );
 
                 Health enemyHealth = other.GetComponent<Health>();
@@ -95,7 +97,6 @@ public class Bullet : MonoBehaviour
                         Debug.Log($"Промах по {other.name}!");
                     }
 
-                    // Создаем текст урона со случайным смещением
                     SpawnDamageText(other.transform.position, damageText, result);
                 }
                 else

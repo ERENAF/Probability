@@ -62,7 +62,8 @@ public class ShotGun : Weapon
                 40 + character.IntelligenceMod,
                 pelletDirection,
                 RollType.RollSimple,
-                character.IntelligenceMod + checkmodifier
+                character.IntelligenceMod + checkmodifier,
+                character.reRoll
             );
         }
     }

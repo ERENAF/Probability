@@ -14,7 +14,7 @@ public enum AbilityScore
 [RequireComponent(typeof(Health))]
 public class DiceCharacter : MonoBehaviour
 {
-    [Header("Характеристики")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     public int strength = 10;
     public int dexterity = 10;
     public int constituion = 10;
@@ -22,9 +22,11 @@ public class DiceCharacter : MonoBehaviour
     public int wisdom = 10;
     public int charisma = 10;
 
-    [Header("Боевые параметры")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     public int armorClass = 10;
-    public int proficiencyBonus = 2;
+    public int proficiencyBonus = 0;
+
+    public bool reRoll = false;
 
     public int StrengthMod => DiceSystem.GetAbilityModifier(strength);
     public int DexterityMod => DiceSystem.GetAbilityModifier(dexterity);

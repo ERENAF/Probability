@@ -45,6 +45,7 @@ public class SniperRifle : Weapon
         50+character.IntelligenceMod,
         shootDirection,
         RollType.RollSimple,
-        character.IntelligenceMod + checkmodifier);
+        character.IntelligenceMod + checkmodifier,
+        character.reRoll);
     }
 }
