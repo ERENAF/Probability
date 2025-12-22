@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 6745203453034535542}
   - component: {fileID: 7895626815525862872}
   - component: {fileID: 6497576676828740454}
+  - component: {fileID: 7114474763288656630}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -314,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currHP: 5
   maxHP: 10
-  hpBar: {fileID: 2474229732843315965}
+  hpBar: {fileID: 2461838641091332479}
   hpText: {fileID: 0}
 --- !u!114 &2824252065206127393
 MonoBehaviour:
@@ -357,8 +358,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 1.6311847, z: 11.748553}
-  m_Center: {x: 0, y: 0.31559208, z: -0.8742737}
+  m_Size: {x: 19.771027, y: 17.797485, z: 11.748553}
+  m_Center: {x: -0.12450278, y: 1.2125009, z: -0.8742738}
 --- !u!114 &7895626815525862872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +372,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc288e326aee5d4abebda80624407e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  speed: 10
+  speed: 2
+  distance: 5
+  timer: 0.5
 --- !u!212 &6497576676828740454
 SpriteRenderer:
   serializedVersion: 2
@@ -431,3 +434,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!65 &7114474763288656630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256499363409365564}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.48, y: 20.48, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb2d1492ae79fd4d8d4cccf5d7e32f4, type: 3}
   m_Name: LootListSO
   m_EditorClassIdentifier: Assembly-CSharp::LootListSO
-  enemyList: []
+  enemyList:
+  - {fileID: 6162053596443461850, guid: 66a827e538963ea4191bfc700bd2762e, type: 3}
+  - {fileID: 6162053596443461850, guid: 953a353f6b04ffc4bb857c1379a2a97d, type: 3}
+  - {fileID: 6162053596443461850, guid: 45327a2fac5564b4bb460dd9edf4167f, type: 3}
+  - {fileID: 6162053596443461850, guid: 1f4d6322315b53d4bba9049a72afa36a, type: 3}
+  - {fileID: 6162053596443461850, guid: 9c59e21384ce0fb408a51d87e597bcf9, type: 3}
+  - {fileID: 6162053596443461850, guid: 9c59e21384ce0fb408a51d87e597bcf9, type: 3}
+  - {fileID: 199669651405181594, guid: 41236ddb97b001d499cadd3503c086dc, type: 3}
+  - {fileID: 4476223461033143782, guid: e78556f06692a60459b30e4c5c93915b, type: 3}
+  - {fileID: 4205521026231025682, guid: f7a69565ab2ff984789da792b0969f4b, type: 3}
