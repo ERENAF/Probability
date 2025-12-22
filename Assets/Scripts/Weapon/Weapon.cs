@@ -16,7 +16,7 @@ public abstract class Weapon : Item
     public int dicecount = 1;
     public int checkmodifier = 0;
     public int dmgmodifier = 0;
-    public int dmgmultipliyer = 1;
+    public int dmgMultipliyer = 1;
     public float SpeedAtack = 1f;
     protected float timer = 0f;
     public GameObject BulletPrefab;
@@ -24,7 +24,7 @@ public abstract class Weapon : Item
 
     public Vector3 deltaPos;
     public PlayerCameraController playerCamera;
-    public abstract void Shoot(DiceCharacter character, int extraDamage = 0);
+    public abstract void Shoot(DiceCharacter character);
 
     public void Reload(float timer )
     {

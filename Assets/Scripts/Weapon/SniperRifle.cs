@@ -32,7 +32,7 @@ public class SniperRifle : Weapon
         }
     }
 
-    public override void Shoot(DiceCharacter character,int extraDamage = 0)
+    public override void Shoot(DiceCharacter character)
     {
         ChangeCurrAmmo();
 
@@ -41,7 +41,7 @@ public class SniperRifle : Weapon
         GameObject bulletObj = Instantiate(BulletPrefab,RifleStart.position, Quaternion.LookRotation(shootDirection));
 
         bulletObj.GetComponent<Bullet>().Initialize(-Damage(dmgmodifier = character.StrengthMod + dmgmodifier,
-        dmgmultipliyer,extraDamage),
+        dmgMultipliyer),
         50+character.IntelligenceMod,
         shootDirection,
         RollType.RollSimple,

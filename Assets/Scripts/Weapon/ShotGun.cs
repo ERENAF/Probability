@@ -39,7 +39,7 @@ public class ShotGun : Weapon
         }
     }
 
-    public override void Shoot(DiceCharacter character, int extraDamage = 0)
+    public override void Shoot(DiceCharacter character)
     {
         ChangeCurrAmmo();
 
@@ -58,7 +58,7 @@ public class ShotGun : Weapon
 
             pelletObj.GetComponent<Bullet>().Initialize(
                 -Damage(dmgmodifier = character.StrengthMod + dmgmodifier,
-        dmgmultipliyer),
+        dmgMultipliyer, character.bonusDMG),
                 40 + character.IntelligenceMod,
                 pelletDirection,
                 RollType.RollSimple,

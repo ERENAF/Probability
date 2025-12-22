@@ -32,7 +32,7 @@ public class Rifle : Weapon
         }
     }
 
-    public override void Shoot(DiceCharacter character, int extraDamage = 0)
+    public override void Shoot(DiceCharacter character)
     {
         ChangeCurrAmmo();
 
@@ -42,7 +42,7 @@ public class Rifle : Weapon
 
         bulletObj.GetComponent<Bullet>().Initialize(
         -Damage(dmgmodifier = character.StrengthMod + dmgmodifier,
-        dmgmultipliyer,extraDamage),
+        dmgMultipliyer,character.bonusDMG),
         50+character.IntelligenceMod,
         shootDirection,
         RollType.RollSimple,
