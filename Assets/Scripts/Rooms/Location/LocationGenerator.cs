@@ -11,18 +11,37 @@ public class LocationGenerator : MonoBehaviour
     [SerializeField] private float minRoomDistance = 1.0f;
     [SerializeField] private bool forceBossCreation = true;
 
-    private readonly List<GameObject> generatedRooms = new();
+    private GameObject hub;
+    public GameObject Hub => hub;
+
+    private List<GameObject> generatedRooms;
     private readonly List<DoorData> openDoors = new();
+
+    public void Init(List<GameObject> generatedRooms)
+    {
+        this.generatedRooms = generatedRooms;
+    }
+
+    public void ResetInfo()
+    {
+        foreach (GameObject go in generatedRooms)
+            Destroy(go);
+
+        generatedRooms.Clear();
+
+        openDoors.Clear();
+
+        hub = null;
+    }
 
     // ================= ENTRY =================
 
     public void GenerateLocation()
-    {
-        int maxRetries = 10; // Максимальное количество попыток перегенерации
+    { // Максимальное количество попыток перегенерации
         int currentRetry = 0;
         bool bossCreated = false;
 
-        while (currentRetry < maxRetries && !bossCreated)
+        while (currentRetry < maxAttemptsPerRoom && !bossCreated)
         {
             Debug.Log($"Попытка генерации локации #{currentRetry + 1}");
 
@@ -36,7 +55,7 @@ public class LocationGenerator : MonoBehaviour
             List<RoomType> plan = BuildGenerationPlan();
 
             // HUB
-            GameObject hub = InstantiateHub();
+            hub = InstantiateHub();
             generatedRooms.Add(hub);
 
             RoomData hubData = hub.GetComponent<RoomData>();
@@ -85,7 +104,7 @@ public class LocationGenerator : MonoBehaviour
 
         if (!bossCreated)
         {
-            Debug.LogError($"Не удалось создать локацию после {maxRetries} попыток!");
+            Debug.LogError($"Не удалось создать локацию после {maxAttemptsPerRoom} попыток!");
             // Можно создать хотя бы базовую локацию с хабом
             CreateFallbackLocation();
         }

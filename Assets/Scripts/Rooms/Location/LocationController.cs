@@ -1,21 +1,30 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LocationController : MonoBehaviour
 {
     [SerializeField] private LocationGenerator locationGenerator;
 
-    public void Awake()
+    private List<GameObject> roomsList;
+
+    public Transform GetPlayerSpawnPosition()
     {
-        StartNewGame();
+        foreach (Transform item in locationGenerator?.Hub?.transform)
+            foreach (Transform item2 in item)
+                if (item2.CompareTag("SpawnPoint"))
+                    return item2;
+
+        return null;
     }
 
-    public void Init()
+    public void CreateLocation()
     {
+        roomsList = new();
 
-    }
+        this.locationGenerator.Init(roomsList);
 
-    public void StartNewGame()
-    {
+        locationGenerator.ResetInfo();
         locationGenerator.GenerateLocation();
     }
 }

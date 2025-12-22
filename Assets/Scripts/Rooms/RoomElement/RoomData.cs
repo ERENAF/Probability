@@ -11,12 +11,21 @@ public class RoomData : MonoBehaviour
 
     public List<DoorData> Doors;
 
+
     [SerializeField] private List<Transform> lootSpawnPoints;
     public List<Transform> LootSpawnPoints => lootSpawnPoints;
 
 
     [SerializeField] private List<Transform> enemySpawnPoints;
     public List<Transform> EnemySpawnPoints => enemySpawnPoints;
+
+
+    [SerializeField] private EnemyListSO enemyList;
+    public EnemyListSO EnemyList => enemyList;
+
+
+    [SerializeField] private LootListSO lootListSO;
+    public LootListSO LootListSO => lootListSO;
 
 
     public IEnumerable<DoorData> FreeDoors()

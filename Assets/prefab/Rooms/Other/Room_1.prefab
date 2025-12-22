@@ -4120,6 +4120,8 @@ MonoBehaviour:
   - {fileID: 6876586255459663139}
   - {fileID: 4511471687645038943}
   - {fileID: 6131102572061547812}
+  enemyList: {fileID: 11400000, guid: d1a82382ec319be41a3a1380a5237830, type: 2}
+  lootListSO: {fileID: 11400000, guid: 6e85ec7220f46f54f8eb205b075bc78a, type: 2}
 --- !u!114 &2725932884375469249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4132,7 +4134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3056a41e467c5d94b940e54ffebf7f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomEnemySpawner
-  isLootSpawning: 1
+  isEnemySpawning: 1
 --- !u!114 &4954765062655294293
 MonoBehaviour:
   m_ObjectHideFlags: 0
