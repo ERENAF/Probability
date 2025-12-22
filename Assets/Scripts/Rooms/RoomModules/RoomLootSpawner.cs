@@ -21,13 +21,13 @@ public class RoomLootSpawner : MonoBehaviour
 
         foreach (var item in roomData.LootSpawnPoints)
         {
-            if (UnityEngine.Random.Range(0, 10) < 5) return;
+            if (UnityEngine.Random.Range(0, 10) < roomData.LootSpawnChance) return;
 
-            GameObject lootItem = Instantiate(roomData.LootListSO.EnemyList[UnityEngine.Random.Range(0, roomData.LootListSO.EnemyList.Count)]);
+            GameObject lootItem = Instantiate(roomData.LootListSO.LootList[UnityEngine.Random.Range(0, roomData.LootListSO.LootList.Count)]);
 
             if (lootItem == null) return;
 
-            lootItem.transform.position = item.position;
+            lootItem.transform.position = item.position + Vector3.up*1f;
         }
     }
 }

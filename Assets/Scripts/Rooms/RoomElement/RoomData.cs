@@ -27,6 +27,13 @@ public class RoomData : MonoBehaviour
     [SerializeField] private LootListSO lootListSO;
     public LootListSO LootListSO => lootListSO;
 
+    [Range(0, 10)]
+    [SerializeField] private int enemySpawnChance;
+    public int EnemySpawnChance => enemySpawnChance;
+
+    [Range(0,10)]
+    [SerializeField] private int lootSpawnChance;
+    public int LootSpawnChance => lootSpawnChance;
 
     public IEnumerable<DoorData> FreeDoors()
     {

@@ -21,7 +21,7 @@ public class RoomEnemySpawner : MonoBehaviour
 
         foreach (var item in roomData.EnemySpawnPoints)
         {
-            if (UnityEngine.Random.Range(0, 10) < 5) return;
+            if (UnityEngine.Random.Range(0, 10) < roomData.EnemySpawnChance) return;
 
             GameObject enemy = Instantiate(roomData.EnemyList.LootList[UnityEngine.Random.Range(0, roomData.EnemyList.LootList.Count)]);
 

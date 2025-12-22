@@ -5,5 +5,5 @@ using UnityEngine;
 public class LootListSO : ScriptableObject
 {
     [SerializeField] private List<GameObject> enemyList;
-    public List<GameObject> EnemyList => enemyList;
+    public List<GameObject> LootList => enemyList;
 }

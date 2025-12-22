@@ -4122,6 +4122,8 @@ MonoBehaviour:
   - {fileID: 6131102572061547812}
   enemyList: {fileID: 11400000, guid: d1a82382ec319be41a3a1380a5237830, type: 2}
   lootListSO: {fileID: 11400000, guid: 6e85ec7220f46f54f8eb205b075bc78a, type: 2}
+  enemySpawnChance: 4
+  lootSpawnChance: 10
 --- !u!114 &2725932884375469249
 MonoBehaviour:
   m_ObjectHideFlags: 0
