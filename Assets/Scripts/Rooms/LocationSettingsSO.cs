@@ -45,4 +45,6 @@ public class LocationSettingsSO : ScriptableObject
 
     [SerializeField] private int OtherRoomsCount;
     [field: NonSerialized] public int otherRoomsCount => OtherRoomsCount;
+
+
 }

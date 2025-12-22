@@ -11,6 +11,9 @@ public class SpriteForwardToPlayer : MonoBehaviour
 
     void Update()
     {
+        if (playerTransform == null)
+            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         Vector3 direction = playerTransform.position - transform.position;
         direction.y = -90;
         transform.rotation = Quaternion.LookRotation(direction);

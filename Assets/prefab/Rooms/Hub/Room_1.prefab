@@ -103,6 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3589182750882249107}
+  - component: {fileID: 5029955055653199787}
   m_Layer: 0
   m_Name: RoomDoorPoint_2
   m_TagString: RoomDoorPoint
@@ -125,6 +126,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4664977200668266419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5029955055653199787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378455864008549337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9254f0760cda86a46b0a27c195061c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorPoint
+  IsUsed: 0
 --- !u!1 &1673200948761061851
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,14 +4466,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a80fe6a1edf7f142b9ceaa9910def0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomData
+  roomType: 0
   roomObject: {fileID: 6617858336267395889}
-  roomDoorsPoints:
-  - {fileID: 3589182750882249107}
+  Doors:
+  - {fileID: 5029955055653199787}
   lootSpawnPoints:
   - {fileID: 5211606801366901123}
   - {fileID: 6525871713850646192}
   - {fileID: 2738304314404170066}
   enemySpawnPoints: []
+  enemyList: {fileID: 11400000, guid: d1a82382ec319be41a3a1380a5237830, type: 2}
+  lootListSO: {fileID: 11400000, guid: 6e85ec7220f46f54f8eb205b075bc78a, type: 2}
 --- !u!114 &2725932884375469249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4472,7 +4489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3056a41e467c5d94b940e54ffebf7f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomEnemySpawner
-  isLootSpawning: 0
+  isEnemySpawning: 0
 --- !u!114 &4954765062655294293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4530,6 +4547,7 @@ Transform:
   - {fileID: 4664977200668266419}
   - {fileID: 1165756823653183393}
   - {fileID: 2392612523356817700}
+  - {fileID: 9190025337966318225}
   m_Father: {fileID: 5137456431542209014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8507703664960009356
@@ -4563,3 +4581,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1165756823653183393}
   m_LocalEulerAnglesHint: {x: 0, y: -165, z: 0}
+--- !u!1 &9073931056915491972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9190025337966318225}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: SpawnPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9190025337966318225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073931056915491972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.272, y: 1.662, z: -6.578}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6674239075401248361}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

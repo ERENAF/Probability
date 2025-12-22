@@ -5134,10 +5134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a80fe6a1edf7f142b9ceaa9910def0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomData
+  roomType: 2
   roomObject: {fileID: 3569355573093306040}
-  roomDoorsPoints:
-  - {fileID: 9152547429442160982}
-  - {fileID: 1085466244168408852}
+  Doors:
+  - {fileID: 2148099692755663375}
+  - {fileID: 4578478682687064613}
   lootSpawnPoints:
   - {fileID: 2765209847962370990}
   - {fileID: 2699013521557565621}
@@ -5147,6 +5148,10 @@ MonoBehaviour:
   - {fileID: 4163524368027863795}
   - {fileID: 8053513571561238904}
   - {fileID: 733994723300634519}
+  enemyList: {fileID: 11400000, guid: d1a82382ec319be41a3a1380a5237830, type: 2}
+  lootListSO: {fileID: 11400000, guid: 6e85ec7220f46f54f8eb205b075bc78a, type: 2}
+  enemySpawnChance: 8
+  lootSpawnChance: 7
 --- !u!114 &1802257668595624395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5172,7 +5177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3056a41e467c5d94b940e54ffebf7f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomEnemySpawner
-  isLootSpawning: 1
+  isEnemySpawning: 1
 --- !u!114 &4230124665231225494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5194,6 +5199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1085466244168408852}
+  - component: {fileID: 4578478682687064613}
   m_Layer: 0
   m_Name: RoomDoorPoint_2
   m_TagString: RoomDoorPoint
@@ -5216,6 +5222,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8667317867541936877}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &4578478682687064613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3988471944515151035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9254f0760cda86a46b0a27c195061c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorPoint
+  IsUsed: 0
 --- !u!1 &4370252388512572416
 GameObject:
   m_ObjectHideFlags: 0
@@ -5450,6 +5469,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9152547429442160982}
+  - component: {fileID: 2148099692755663375}
   m_Layer: 0
   m_Name: RoomDoorPoint_1
   m_TagString: RoomDoorPoint
@@ -5472,3 +5492,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8667317867541936877}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2148099692755663375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949225405218776559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9254f0760cda86a46b0a27c195061c51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorPoint
+  IsUsed: 0

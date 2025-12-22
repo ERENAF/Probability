@@ -16,5 +16,10 @@ public class RoomBrain : MonoBehaviour
         enemySpawner = GetComponent<RoomEnemySpawner>();
 
         //соединения 
+        enemySpawner.Init(roomData);
+        lootSpawner.Init(roomData);
+
+        enemySpawner.Spawn();
+        lootSpawner.Spawn();
     }
 }

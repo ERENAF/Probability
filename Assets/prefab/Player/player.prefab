@@ -690,9 +690,15 @@ Transform:
   m_GameObject: {fileID: 5060624747846205982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD:Assets/prefab/Player/player.prefab
   m_LocalPosition: {x: 891.07477, y: 3.6, z: 956.7121}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
+=======
+  m_LocalPosition: {x: 5.97, y: 1, z: 3.7766068}
+  m_LocalScale: {x: 0.7, y: 1.4, z: 0.7}
+  m_ConstrainProportionsScale: 1
+>>>>>>> 6b9b91a861fc2404d2cdba5f6d531d12a45839d5:Assets/prefab/Player/player 2.prefab
   m_Children:
   - {fileID: 5214522252074970083}
   - {fileID: 6378615283909974043}

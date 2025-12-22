@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 6617858336267395889, guid: 018a90998fce4124b80a5be8cd9b6f65, type: 3}
   BossRoomsList:
   - {fileID: 3569355573093306040, guid: 65a31a2c0fd31f3458f99397765f4c6b, type: 3}
-  LootRoomsCount: 0
-  EnemyRoomsCount: 0
-  PassageRoomsCount: 0
-  OtherRoomsCount: 0
+  LootRoomsCount: 2
+  EnemyRoomsCount: 3
+  PassageRoomsCount: 4
+  OtherRoomsCount: 5
