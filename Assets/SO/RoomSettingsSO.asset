@@ -19,11 +19,13 @@ MonoBehaviour:
   EnemyRoomsList:
   - {fileID: 3569355573093306040, guid: 0570514a3668d2947aca07f9682004f4, type: 3}
   - {fileID: 3569355573093306040, guid: a7a90c1e14f92304a9b0544d014a420c, type: 3}
+  - {fileID: 3569355573093306040, guid: 877408b640f9e8b4bb83f3524bfacb27, type: 3}
   PassageRoomsList:
   - {fileID: 6617858336267395889, guid: a19d8f3f102916c449ac13245388b2f8, type: 3}
   - {fileID: 8518469322666510669, guid: d5e4ac1f7626ed24faa8eea943fd3fd1, type: 3}
   OtherRoomsList:
   - {fileID: 6617858336267395889, guid: 018a90998fce4124b80a5be8cd9b6f65, type: 3}
+  - {fileID: 6617858336267395889, guid: 2d4da9eeaac3ada428f9d90f5efd88aa, type: 3}
   BossRoomsList:
   - {fileID: 3569355573093306040, guid: 65a31a2c0fd31f3458f99397765f4c6b, type: 3}
   LootRoomsCount: 2
