@@ -1,10 +1,5 @@
-using System.Runtime.CompilerServices;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
-using Unity.IO.LowLevel.Unsafe;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(DiceCharacter))]
 public class Health : MonoBehaviour
