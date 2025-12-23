@@ -346,11 +346,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4767f7c855e1ef4ab8f5c04a5268ba5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon1: {fileID: 3777830575384689203, guid: 1a13dc90cd7fff44aa84706fa1bae435, type: 3}
-  weapon2: {fileID: 6366749035229262499, guid: c111e006a8772a549b1973c314fdf121, type: 3}
+  weapon1: {fileID: 6366749035229262499, guid: c111e006a8772a549b1973c314fdf121, type: 3}
+  weapon2: {fileID: 0}
   chosenWeapon: {fileID: 0}
   chosenWeaponIndex: 0
-  diceCharacter: {fileID: 0}
+  diceCharacter: {fileID: 5190227006483657938}
   start: {fileID: 1129564016945716318}
   ammoText: {fileID: 0}
 --- !u!1 &2588042597610345870
@@ -1247,7 +1247,7 @@ GameObject:
   - component: {fileID: 2218073108820471907}
   - component: {fileID: 5190227006483657938}
   m_Layer: 0
-  m_Name: player 2
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,7 +1300,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7452386276845527380}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1315,7 +1315,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -1446,7 +1446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a338f19e95242ba44bcf12cc08629dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpForce: 63
+  JumpForce: 45
   groundCheckDistance: 1.05
   groundLayer:
     serializedVersion: 2
@@ -1454,7 +1454,7 @@ MonoBehaviour:
   isAbleHoldJump: 1
   maxTime: 2.5
   minTime: 0.5
-  maxJumpForce: 123
+  maxJumpForce: 85
   AudioVolume: 0
   AudioJumps: []
 --- !u!114 &7539390360643234490
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d75acfac47d0164bbd6afb05d87f587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DashForce: 58
+  DashForce: 120
   CoolDown: 2
   DashDuration: 1
   isDashing: 0
