@@ -27,7 +27,9 @@ public class RoomLootSpawner : MonoBehaviour
 
             if (lootItem == null) return;
 
-            lootItem.transform.position = item.position + Vector3.up*1f;
+            lootItem.transform.parent = transform;
+
+            lootItem.transform.position = item.position + Vector3.up * 0.2f;
         }
     }
 }

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    [SerializeField] public float speed;
-    public float distance = 0;
-    public float timer;
+    [SerializeField] private float speed;
+    [SerializeField] private float distance = 0;
+
+    const float timer = 0.1f;
     private bool isActive;
     private Transform playerTransform;
 
+    WaitForSeconds waitForSeconds = new WaitForSeconds(timer);
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -17,12 +19,21 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        if (MovementVector().magnitude < distance * 10 && !isActive)
+        // debilnoe reshenie no chto podelat mi ne v pro gamedev corp and job for truueee leeee
+        if (playerTransform == null)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            return;
+        }
+
+        if (Vector3.Distance(transform.position, playerTransform.position) < distance * 10 && !isActive)
         {
             isActive = true;
         }
 
-        if (MovementVector().magnitude > distance && isActive)
+        if (Vector3.Distance(transform.position, playerTransform.position) > distance/3
+            && Vector3.Distance(transform.position, playerTransform.position) < distance * 3
+            && isActive)
         {
             StartCoroutine(Move());
         }
@@ -30,14 +41,13 @@ public class EnemyMove : MonoBehaviour
 
     private IEnumerator Move()
     {
-        transform.position += speed * MovementVector().normalized * Time.deltaTime;
-        yield return new WaitForSeconds(timer);
+        transform.position +=  MovementVector() * speed * Time.deltaTime;
+
+        yield return waitForSeconds;
     }
 
     private Vector3 MovementVector()
     {
-        return playerTransform.position - transform.position;
+        return (playerTransform.position - transform.position).normalized;
     }
-
-
 }

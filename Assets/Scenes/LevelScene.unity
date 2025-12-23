@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LocationGenerator
   transformParent: {fileID: 1813134454}
   locSO: {fileID: 11400000, guid: d2e37820b7cad9744943c86975694cda, type: 2}
-  maxAttemptsPerRoom: 100
+  maxAttemptsPerRoom: 30
   minRoomDistance: 7
   forceBossCreation: 0
 --- !u!114 &102903165
