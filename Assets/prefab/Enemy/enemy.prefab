@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 7895626815525862872}
   - component: {fileID: 6497576676828740454}
   - component: {fileID: 7114474763288656630}
+  - component: {fileID: 8231998488147529620}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Enemy
@@ -354,11 +355,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 19.771027, y: 17.797485, z: 11.748553}
+  m_Size: {x: 30, y: 17.797485, z: 30}
   m_Center: {x: -0.12450278, y: 1.2125009, z: -0.8742738}
 --- !u!114 &7895626815525862872
 MonoBehaviour:
@@ -374,7 +375,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   speed: 2
   distance: 5
-  timer: 0.5
 --- !u!212 &6497576676828740454
 SpriteRenderer:
   serializedVersion: 2
@@ -449,9 +449,24 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 20.48, y: 20.48, z: 0.2}
+  m_Size: {x: 10.08, y: 20.48, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8231998488147529620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256499363409365564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b273fb424ceea2240990602179d5de82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  damageCooldown: 0.8
+  damageDice: 6
+  targetTag: Player
