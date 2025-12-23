@@ -226,6 +226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3a0126c448b8942a2b053633f4ea04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 770057438}
+  trigger: StartTheGame
+  timer: 2.5
 --- !u!114 &369111750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +551,7 @@ GameObject:
   - component: {fileID: 770057435}
   - component: {fileID: 770057437}
   - component: {fileID: 770057436}
+  - component: {fileID: 770057438}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -594,7 +598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9901480f255dc6f41a9a002004430c70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa6093e0b98b7ae42acf5444ca268f2a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -612,6 +616,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770057434}
   m_CullTransparentMesh: 1
+--- !u!95 &770057438
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770057434}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 854ad5dd268c3d9428d66ab175317f62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &788419067
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +997,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 369111749}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: PlayScene
+        m_MethodName: GameScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1841,8 +1867,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

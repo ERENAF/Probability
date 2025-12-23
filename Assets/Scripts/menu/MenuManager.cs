@@ -1,8 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
+using UnityEngine.Android;
+using Unity.Serialization;
+using System.Collections;
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] Animator anim;
+    public string trigger;
+    public float timer = 0f;
+
+    public void GameScene(int num_scene)
+    {
+        anim.SetTrigger(trigger);
+        StartCoroutine(SceneStarter(num_scene));
+    }
+
+    private IEnumerator SceneStarter(int num_scene)
+    {
+        yield return new WaitForSeconds(timer);
+        PlayScene(num_scene);
+    }
     public void PlayScene(int num_scene)
     {
         SceneManager.LoadScene(num_scene);

@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
   damageCooldown: 1
-  damageDice: 6
+  damageDice: 4
   targetTag: Player
 --- !u!1 &986216011
 GameObject:
@@ -2153,6 +2153,14 @@ PrefabInstance:
     - target: {fileID: 6745203453034535542, guid: 304311a5a10d96844a3a5e823af00860, type: 3}
       propertyPath: m_Center.z
       value: -20.13855
+      objectReference: {fileID: 0}
+    - target: {fileID: 6745203453034535542, guid: 304311a5a10d96844a3a5e823af00860, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114474763288656630, guid: 304311a5a10d96844a3a5e823af00860, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7895626815525862872, guid: 304311a5a10d96844a3a5e823af00860, type: 3}
       propertyPath: speed
